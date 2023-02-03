@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 387520300082118036}
   - component: {fileID: 2386353737697878654}
   - component: {fileID: 2562933426751308971}
+  - component: {fileID: 1577065054}
   m_Layer: 0
   m_Name: lectern
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1577065054
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091696151423210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1314387283641576553, guid: ac8e2c2ade8b21e4abce9987d7ae977f, type: 3}
 --- !u!1 &6962784527818575652
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +143,7 @@ GameObject:
   - component: {fileID: 4679433966632675884}
   - component: {fileID: 6047902727335144534}
   - component: {fileID: 2917172571610275532}
+  - component: {fileID: 1577229927}
   m_Layer: 0
   m_Name: book
   m_TagString: Untagged
@@ -200,6 +216,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1577229927
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211679276666661520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 381947130776709163, guid: ac8e2c2ade8b21e4abce9987d7ae977f, type: 3}
 --- !u!1 &7445754872276379066
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +273,7 @@ GameObject:
   - component: {fileID: 1820884238014206142}
   - component: {fileID: 2302108359213804846}
   - component: {fileID: 4285189339522585592}
+  - component: {fileID: 216014896}
   m_Layer: 0
   m_Name: island
   m_TagString: Untagged
@@ -315,3 +346,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &216014896
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254913931287473551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9023955764063960635, guid: ac8e2c2ade8b21e4abce9987d7ae977f, type: 3}
