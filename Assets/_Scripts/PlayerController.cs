@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
     PlayerInputActions _playerInputActions;
     Rigidbody _rb;
+    int _currentScene;
 
     [SerializeField]
     GameObject _focusPoint;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     float _speed = 5f;
+    [SerializeField]
+    float _distanceFromGround = 1.5f;
 
     [SerializeField]
     float _powerupTimer = 7f;
@@ -28,6 +31,12 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        _currentScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(_currentScene);
+    }
+
     private void OnEnable() => _playerInputActions.Player.Movement.Enable();
 
     private void OnDisable() => _playerInputActions.Player.Movement.Disable();
@@ -35,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HandlePowerupCountdown();
+        ProcessPlayerDeath();
     }
 
     private void HandlePowerupCountdown()
@@ -48,11 +58,21 @@ public class PlayerController : MonoBehaviour
                 _hasPowerup = false; //turn off power up state
         }
     }
+    private void ProcessPlayerDeath()
+    {
+        
+
+        if (!Physics.Raycast(transform.position, Vector3.down, _distanceFromGround))
+            _rb.velocity = new Vector3(transform.position.x, -10f, transform.position.z);
+
+        if (transform.position.y <= -5)
+            SceneManager.LoadScene(_currentScene);
+    }
 
     private void FixedUpdate()
     {
-        Vector2 actions = _playerInputActions.Player.Movement.ReadValue<Vector2>();
-        _rb.AddForce(_focusPoint.transform.forward * actions.y *_speed);
+        Vector2 playerInput = _playerInputActions.Player.Movement.ReadValue<Vector2>();
+        _rb.AddForce(_focusPoint.transform.forward * playerInput.y * _speed);
     }
 
     private void OnTriggerEnter(Collider other)

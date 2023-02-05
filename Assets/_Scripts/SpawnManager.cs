@@ -7,6 +7,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     GameObject _enemyPrefab;
     [SerializeField]
+    GameObject _enemyParent;
+    [SerializeField]
     GameObject _powerupPrefab;
 
     float xPos = 7f;    
@@ -24,7 +26,8 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Instantiate(_enemyPrefab, CalculateRandomPos(), _enemyPrefab.transform.rotation);
+            GameObject enemy =Instantiate(_enemyPrefab, CalculateRandomPos(), _enemyPrefab.transform.rotation);
+            enemy.transform.parent = _enemyParent.transform;
         }
     }
 
@@ -45,7 +48,6 @@ public class SpawnManager : MonoBehaviour
         {
             if(GameObject.FindGameObjectsWithTag("Powerup").Length == 0)
                Instantiate(_powerupPrefab, CalculateRandomPos(), _powerupPrefab.transform.rotation);
-
 
             _currentWave++;
             SpawnNumberOfEnemies(_currentWave);
