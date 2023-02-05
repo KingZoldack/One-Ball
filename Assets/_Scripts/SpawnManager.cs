@@ -5,18 +5,30 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject _enemyGameObject;
+    GameObject _enemyPrefab;
+    [SerializeField]
+    GameObject _powerupPrefab;
 
-    float xPos = 7f;
+    float xPos = 7f;    
     float zPos = 13f;
+    int _currentWave = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(_enemyGameObject, CalculateEnemySpawnPos(), _enemyGameObject.transform.rotation);
+        SpawnNumberOfEnemies(_currentWave);
+        Instantiate(_powerupPrefab, CalculateRandomPos(), _powerupPrefab.transform.rotation);
     }
 
-    private Vector3 CalculateEnemySpawnPos()
+    private void SpawnNumberOfEnemies(int numberOfEnemies)
+    {
+        for (int i = 0; i < numberOfEnemies; i++)
+        {
+            Instantiate(_enemyPrefab, CalculateRandomPos(), _enemyPrefab.transform.rotation);
+        }
+    }
+
+    private Vector3 CalculateRandomPos()
     {
         float randomX = Random.Range(-xPos, xPos);
         float randomZ = Random.Range(-xPos, zPos);
@@ -28,6 +40,15 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int _enemyCount = FindObjectsOfType<Enemy>().Length;
+        if (_enemyCount == 0)
+        {
+            if(GameObject.FindGameObjectsWithTag("Powerup").Length == 0)
+               Instantiate(_powerupPrefab, CalculateRandomPos(), _powerupPrefab.transform.rotation);
+
+
+            _currentWave++;
+            SpawnNumberOfEnemies(_currentWave);
+        }
     }
 }

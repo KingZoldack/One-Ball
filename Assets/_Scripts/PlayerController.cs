@@ -28,25 +28,24 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
-    {
-        _playerInputActions.Player.Movement.Enable();
-    }
+    private void OnEnable() => _playerInputActions.Player.Movement.Enable();
 
-    private void OnDisable()
-    {
-        _playerInputActions.Player.Movement.Disable();
-    }
+    private void OnDisable() => _playerInputActions.Player.Movement.Disable();
 
     private void Update()
     {
+        HandlePowerupCountdown();
+    }
+
+    private void HandlePowerupCountdown()
+    {
         if (_timeLeft > 0 && _hasPowerup)
         {
-            _timeLeft -= Time.deltaTime;
-            _timerFill.fillAmount = _timeLeft / _powerupTimer;
+            _timeLeft -= Time.deltaTime; //count down every second
+            _timerFill.fillAmount = _timeLeft / _powerupTimer; //reduce fill amount every second
 
             if (_timeLeft <= 0)
-                _hasPowerup = false;
+                _hasPowerup = false; //turn off power up state
         }
     }
 
@@ -58,16 +57,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //turn on powerup state
         if (other.GetComponent<Powerup>() != null)
         {
             _hasPowerup = true;
             Destroy(other.gameObject);
-            _timeLeft = 7f;
+            _timeLeft = _powerupTimer; //sets the timer for powerup duration
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //defines powerup ability
         if (collision.gameObject.GetComponent<Enemy>() && _hasPowerup)
         {
             Rigidbody enemyRb = collision.gameObject.GetComponent<Rigidbody>();
