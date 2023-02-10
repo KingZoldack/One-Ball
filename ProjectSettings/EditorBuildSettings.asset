@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Plain Island.unity
+    guid: a4b96ad7a65484fd4a83cb97540eee50
+  - enabled: 1
+    path: Assets/Scenes/Isle of Book.unity
+    guid: c026be9235408394094b575cc79fd61f
+  - enabled: 1
+    path: Assets/Scenes/Shrine Island.unity
+    guid: 4840387410d5c924a853d2f849631d3f
   m_configObjects: {}
