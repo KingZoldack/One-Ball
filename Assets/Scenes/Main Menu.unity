@@ -8990,6 +8990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3134846128117477165}
+  - component: {fileID: 3134846128117477166}
   m_Layer: 0
   m_Name: Isle of Book
   m_TagString: Untagged
@@ -9948,6 +9949,7 @@ GameObject:
   - component: {fileID: 2779603033521260233}
   - component: {fileID: 2789671361472701269}
   - component: {fileID: 2802735117847085807}
+  - component: {fileID: 2807220301493846174}
   m_Layer: 6
   m_Name: Island
   m_TagString: Untagged
@@ -9984,6 +9986,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -35.392, y: -25.173, z: 0}
+--- !u!114 &2807220301493846174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801748501736895189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41454d2a5109b1489f1a0a1810cadd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2827838787380289289
 GameObject:
   m_ObjectHideFlags: 0
@@ -10675,6 +10689,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 38.101, y: -181.359, z: 3.148}
+--- !u!114 &3134846128117477166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362953143601542551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41454d2a5109b1489f1a0a1810cadd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &3145450455383016916
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19600,7 +19626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164306259935099138}
   m_LocalRotation: {x: -0.23162898, y: 0.91551846, z: -0.17516151, w: 0.2783747}
-  m_LocalPosition: {x: 9.78, y: -3.9938211, z: 3.62}
+  m_LocalPosition: {x: 9.32, y: -3.9938211, z: 3.62}
   m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -21616,6 +21642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8332845125773860311}
+  - component: {fileID: 8714437595761264494}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -21623,6 +21650,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8714437595761264494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8714437595761264493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41454d2a5109b1489f1a0a1810cadd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8723243340456384695
 GameObject:
   m_ObjectHideFlags: 0

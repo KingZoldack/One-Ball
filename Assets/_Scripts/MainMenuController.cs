@@ -33,12 +33,6 @@ public class MainMenuController : MonoBehaviour
         _siButton.clicked += ShrineIslandButton;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void PlainIslandButton()
     {
         SceneManager.LoadScene("Plain Island");
