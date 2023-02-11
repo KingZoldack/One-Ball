@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 117698b2fd0c4974e88988f136abc02d
+  - enabled: 1
     path: Assets/Scenes/Plain Island.unity
     guid: a4b96ad7a65484fd4a83cb97540eee50
   - enabled: 1

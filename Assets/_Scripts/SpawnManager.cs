@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField]
-    StagesSelector _currentStage;
+    public StagesSelector currentStage;
 
     [SerializeField]
     GameObject _enemyPrefab;
@@ -42,7 +41,7 @@ public class SpawnManager : MonoBehaviour
     float randomZ;
     int _currentWave = 1;
 
-    enum StagesSelector
+    public enum StagesSelector
     {
         SelectionMenu,
         PlainIsland,
@@ -69,14 +68,14 @@ public class SpawnManager : MonoBehaviour
 
     private Vector3 CalculateRandomPos()
     {
-        if (_currentStage == StagesSelector.PlainIsland)
+        if (currentStage == StagesSelector.PlainIsland)
         {
             randomX = Random.Range(-_plainIslandXPos, _plainIslandXPos);
             randomZ = Random.Range(-_plainIslandXPos, _plainIslandZPos);
         }
 
 
-        if  (_currentStage == StagesSelector.IsleOfBook)
+        if  (currentStage == StagesSelector.IsleOfBook)
         {
             int spawnSection = Random.Range(0, 3);
 
@@ -99,7 +98,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        if (_currentStage == StagesSelector.ShrineIsland)
+        if (currentStage == StagesSelector.ShrineIsland)
         {
             randomX = Random.Range(_shrineIslandUpperLeftClamp.x, _isleOfBookBottomLowerRightClamp.x);
             randomZ = Random.Range(_shrineIslandUpperLeftClamp.z, _isleOfBookBottomLowerRightClamp.z);

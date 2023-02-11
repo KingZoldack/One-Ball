@@ -22,3 +22,28 @@
     -unity-text-outline-color: rgba(14, 13, 13, 255);
     letter-spacing: 5px;
 }
+
+.selcetion-style-buttom:hover {
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    left: 0;
+    background-color: rgba(88, 88, 88, 0);
+    font-size: 90px;
+    -unity-text-align: lower-center;
+    -unity-font: none;
+    padding-bottom: 100px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(255, 0, 0);
+    border-top-color: rgb(255, 0, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    -unity-font-definition: url('project://database/Assets/Fonts/Magician%20SDF.asset?fileID=11400000&guid=d683dee0b29b5c2489f8cfc1a88dce7d&type=2#Magician SDF');
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+}
