@@ -130,5 +130,5 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  _speed: 10
+  _speed: 7
   _distanceFromGround: 2

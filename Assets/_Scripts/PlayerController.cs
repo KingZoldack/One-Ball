@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,11 +30,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void Start()
-    {
-        _currentScene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(_currentScene);
-    }
+    private void Start() => _currentScene = SceneManager.GetActiveScene().buildIndex;
 
     private void OnEnable() => _playerInputActions.Player.Movement.Enable();
 
@@ -45,6 +40,9 @@ public class PlayerController : MonoBehaviour
     {
         HandlePowerupCountdown();
         ProcessPlayerDeath();
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+            SceneManager.LoadScene(0);
     }
 
     private void HandlePowerupCountdown()
@@ -60,14 +58,14 @@ public class PlayerController : MonoBehaviour
     }
     private void ProcessPlayerDeath()
     {
-        
-
         if (!Physics.Raycast(transform.position, Vector3.down, _distanceFromGround))
             _rb.velocity = new Vector3(transform.position.x, -10f, transform.position.z);
 
         if (transform.position.y <= -5)
             SceneManager.LoadScene(_currentScene);
     }
+
+    public void MainMenu() => SceneManager.LoadScene(0);
 
     private void FixedUpdate()
     {
